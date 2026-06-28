@@ -23,6 +23,14 @@ const AdminLogin = () => {
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
+    // Dev bypass — works without backend
+    if (data.email === 'admin@edurise.com' && data.password === 'admin123') {
+      setAuth('dev-token', { name: 'Admin', email: data.email });
+      toast.success('Login successful');
+      navigate('/admin/dashboard');
+      setIsSubmitting(false);
+      return;
+    }
     try {
       const response = await authAPI.login(data);
       const { token, admin } = response.data.data;

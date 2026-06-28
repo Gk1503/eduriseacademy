@@ -24,6 +24,8 @@ import ManageInquiries from '../pages/admin/ManageInquiries';
 import ManageStudents from '../pages/admin/ManageStudents';
 import ManageGallery from '../pages/admin/ManageGallery';
 import ManageAnnouncements from '../pages/admin/ManageAnnouncements';
+import FeeManager from '../pages/admin/FeeManager';
+import WebsiteContent from '../pages/admin/WebsiteContent';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -60,11 +62,18 @@ const AppRouter = () => {
       >
         <Route index element={<Navigate to="/admin/dashboard" replace />} />
         <Route path="dashboard" element={<Dashboard />} />
-        <Route path="courses" element={<ManageCourses />} />
-        <Route path="inquiries" element={<ManageInquiries />} />
         <Route path="students" element={<ManageStudents />} />
+        <Route path="courses" element={<ManageCourses />} />
+        <Route path="fees" element={<FeeManager />} />
+        <Route path="inquiries" element={<ManageInquiries />} />
         <Route path="gallery" element={<ManageGallery />} />
         <Route path="announcements" element={<ManageAnnouncements />} />
+        <Route path="documents" element={<ManageStudents />} />
+        <Route path="website/courses" element={<WebsiteContent />} />
+        <Route path="website/pages" element={<WebsiteContent />} />
+        <Route path="website/testimonials" element={<WebsiteContent />} />
+        <Route path="website/hero" element={<WebsiteContent />} />
+        <Route path="settings" element={<Dashboard />} />
       </Route>
 
       {/* 404 */}
