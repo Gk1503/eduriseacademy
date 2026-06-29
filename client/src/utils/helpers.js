@@ -6,6 +6,9 @@ export function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
+
+
+
 // Format date
 export const formatDate = (date) => {
   return new Date(date).toLocaleDateString('en-IN', {
