@@ -33,9 +33,9 @@ const initPages = {
   about_story: 'EduRise Academy was founded in 2016 with a clear goal: give students in Gandhinagar access to practical, job-ready education that actually works.',
   about_mission: 'To provide practical, job-ready education that empowers students with real skills, industry knowledge and the confidence to excel.',
   about_vision: "To be Gandhinagar's most trusted learning centre — where every student, from Class 1 to a working professional, finds the right education to grow.",
-  contact_address: 'EduRise Academy, Gandhinagar, Gujarat, India',
-  contact_phone: '+91 98765 43210',
-  contact_email: 'info@eduriseacademy.co.in',
+  contact_address: 'EduRise Academy Gandhinagar, SFN 203, Arizona Sky, Vavol, Uvarsad Road, Gandhinagar',
+  contact_phone: '+91 94270 80826',
+  contact_email: 'eduriseacademy.learning@gmail.com',
 };
 
 const inputCls = 'w-full border-2 border-slate-200 rounded-xl px-3.5 py-2.5 font-inter text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-indigo-400 transition-colors';

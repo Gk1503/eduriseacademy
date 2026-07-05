@@ -100,7 +100,7 @@ export default function Footer() {
 
             <p className="font-inter text-slate-400 text-[14px] leading-relaxed mb-6 max-w-[260px]">
               Gandhinagar's #1 IT Training Institute. Expert courses in Web Dev,
-              Python, Spoken English & Academic Tuition since 2016.
+              Python, Spoken English & Academic Tuition since 2026.
             </p>
 
             {/* Social icons */}
@@ -190,12 +190,12 @@ export default function Footer() {
                   <MapPin size={15} className="text-orange-400" />
                 </div>
                 <span className="font-inter text-slate-400 text-[13.5px] leading-relaxed">
-                  EduRise Academy, Gandhinagar,<br />Gujarat, India
+                  EduRise Academy Gandhinagar,<br />SFN 203, Arizona Sky, Vavol,<br />Uvarsad Road, Gandhinagar
                 </span>
               </li>
               <li>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919427080826"
                   className="flex items-center gap-3 group"
                 >
                   <div className="w-8 h-8 bg-indigo-500/15 border border-indigo-500/20
@@ -204,13 +204,13 @@ export default function Footer() {
                   </div>
                   <span className="font-inter text-slate-400 text-[13.5px]
                                    group-hover:text-indigo-300 transition-colors">
-                    +91 98765 43210
+                    +91 94270 80826
                   </span>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@eduriseacademy.co.in"
+                  href="mailto:eduriseacademy.learning@gmail.com"
                   className="flex items-center gap-3 group"
                 >
                   <div className="w-8 h-8 bg-blue-500/15 border border-blue-500/20
@@ -219,13 +219,13 @@ export default function Footer() {
                   </div>
                   <span className="font-inter text-slate-400 text-[13.5px]
                                    group-hover:text-blue-300 transition-colors">
-                    info@eduriseacademy.co.in
+                    eduriseacademy.learning@gmail.com
                   </span>
                 </a>
               </li>
               <li>
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/919427080826"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 group"

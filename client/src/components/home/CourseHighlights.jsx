@@ -25,7 +25,7 @@ const highlights = [
     num: '03',
     Icon: MessageCircle,
     title: 'Daily Use Sentences',
-    desc: 'A toolkit of 1,000+ everyday sentences for work, travel, and social situations.',
+    desc: 'A toolkit of many everyday sentences for work, travel, and social situations.',
     grad: 'from-violet-500 to-purple-700',
     glow: 'shadow-violet-200',
   },

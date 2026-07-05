@@ -129,7 +129,7 @@ export default function WhatMakesUsDifferent() {
           <span className="inline-block bg-white border border-slate-200 shadow-sm
                            text-slate-600 font-poppins font-bold text-[13px]
                            tracking-[0.22em] uppercase px-6 py-3 rounded-full mb-7">
-            Why EduRise Academy
+            Why EduRise Academy Gandhinagar
           </span>
 
           <h2 className="font-poppins font-black

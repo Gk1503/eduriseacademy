@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Zap, Users, MessageSquare, BookOpen, Phone, Shield, Clock, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { getWhatsAppLink } from '../../utils/helpers';
 
 const FreeDemoSection = () => {
   const features = [
@@ -127,7 +128,7 @@ const FreeDemoSection = () => {
               Call Now
             </Link>
             <a
-              href="https://wa.me/1234567890"
+              href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white px-6 py-3 rounded-lg text-base font-bold transition-all transform hover:scale-105 shadow-xl"

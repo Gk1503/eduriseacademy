@@ -7,7 +7,7 @@ const MobileBottomNav = () => {
     { icon: Home, label: 'Home', path: '/' },
     { icon: BookOpen, label: 'Courses', path: '/courses' },
     { icon: MessageSquare, label: 'Enquire', path: '/contact' },
-    { icon: Phone, label: 'Call', action: 'tel:+919876543210' },
+    { icon: Phone, label: 'Call', action: 'tel:+919427080826' },
     { icon: MessageCircle, label: 'WhatsApp', action: getWhatsAppLink() },
   ];
 

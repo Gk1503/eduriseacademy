@@ -60,8 +60,24 @@ export const coursesAPI = {
 };
 
 // Inquiries API
+// `create` posts to the site's own /api/inquiry serverless function (emails
+// the details straight to the academy inbox) rather than the external backend,
+// since there is no database-backed admin panel for inquiries yet.
 export const inquiriesAPI = {
-  create: (data) => api.post('/inquiries', data),
+  create: async (data) => {
+    const res = await fetch('/api/inquiry', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const body = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      const error = new Error(body.message || 'Failed to submit inquiry');
+      error.response = { data: body };
+      throw error;
+    }
+    return { data: body };
+  },
   getAll: (params) => api.get('/inquiries', { params }),
   getById: (id) => api.get(`/inquiries/${id}`),
   update: (id, data) => api.patch(`/inquiries/${id}`, data),

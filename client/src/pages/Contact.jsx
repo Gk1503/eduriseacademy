@@ -7,6 +7,8 @@ import {
   GraduationCap, ChevronDown, Sparkles,
 } from 'lucide-react';
 import { FaWhatsapp, FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa';
+import toast from 'react-hot-toast';
+import { inquiriesAPI } from '../services/api';
 
 /* ─── Static course list ─────────────────────────────────────── */
 const courseOptions = [
@@ -24,18 +26,18 @@ const courseOptions = [
 const contactDetails = [
   {
     Icon: MapPin, label: 'Visit Us',
-    value: 'EduRise Academy, Gandhinagar, Gujarat, India',
+    value: 'EduRise Academy Gandhinagar, SFN 203, Arizona Sky, Vavol, Uvarsad Road, Gandhinagar',
     href: null, iconBg: 'bg-indigo-500/20', iconClr: 'text-indigo-300',
   },
   {
     Icon: Phone, label: 'Call Us',
-    value: '+91 98765 43210',
-    href: 'tel:+919876543210', iconBg: 'bg-emerald-500/20', iconClr: 'text-emerald-300',
+    value: '+91 94270 80826',
+    href: 'tel:+919427080826', iconBg: 'bg-emerald-500/20', iconClr: 'text-emerald-300',
   },
   {
     Icon: Mail, label: 'Email Us',
-    value: 'info@eduriseacademy.co.in',
-    href: 'mailto:info@eduriseacademy.co.in', iconBg: 'bg-sky-500/20', iconClr: 'text-sky-300',
+    value: 'eduriseacademy.learning@gmail.com',
+    href: 'mailto:eduriseacademy.learning@gmail.com', iconBg: 'bg-sky-500/20', iconClr: 'text-sky-300',
   },
   {
     Icon: Clock, label: 'Working Hours',
@@ -94,9 +96,22 @@ export default function Contact() {
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setSubmitting(true);
-    await new Promise(r => setTimeout(r, 1400));
-    setSubmitting(false);
-    setSubmitted(true);
+    try {
+      await inquiriesAPI.create({
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        city: form.city,
+        courseName: form.course,
+        message: form.message,
+        source: 'contact-page',
+      });
+      setSubmitted(true);
+    } catch (error) {
+      toast.error(error.response?.data?.message || 'Failed to send. Please try calling or WhatsApp instead.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -131,9 +146,9 @@ export default function Contact() {
       <div className="container mx-auto px-6 -mt-7 mb-12 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
-            { Icon: Phone, label: 'Call Now', sub: '+91 98765 43210', href: 'tel:+919876543210', bg: 'bg-white', border: 'border-slate-200', iconBg: 'bg-emerald-100', iconClr: 'text-emerald-600', hover: 'hover:border-emerald-300 hover:shadow-emerald-100' },
-            { Icon: FaWhatsapp, label: 'WhatsApp', sub: 'Chat instantly', href: 'https://wa.me/919876543210', bg: 'bg-green-600', border: 'border-green-500', iconBg: 'bg-white/20', iconClr: 'text-white', hover: 'hover:bg-green-700', textClr: 'text-white', subClr: 'text-green-100' },
-            { Icon: Mail, label: 'Email Us', sub: 'info@eduriseacademy.co.in', href: 'mailto:info@eduriseacademy.co.in', bg: 'bg-white', border: 'border-slate-200', iconBg: 'bg-indigo-100', iconClr: 'text-indigo-600', hover: 'hover:border-indigo-300 hover:shadow-indigo-100' },
+            { Icon: Phone, label: 'Call Now', sub: '+91 94270 80826', href: 'tel:+919427080826', bg: 'bg-white', border: 'border-slate-200', iconBg: 'bg-emerald-100', iconClr: 'text-emerald-600', hover: 'hover:border-emerald-300 hover:shadow-emerald-100' },
+            { Icon: FaWhatsapp, label: 'WhatsApp', sub: 'Chat instantly', href: 'https://wa.me/919427080826', bg: 'bg-green-600', border: 'border-green-500', iconBg: 'bg-white/20', iconClr: 'text-white', hover: 'hover:bg-green-700', textClr: 'text-white', subClr: 'text-green-100' },
+            { Icon: Mail, label: 'Email Us', sub: 'eduriseacademy.learning@gmail.com', href: 'mailto:eduriseacademy.learning@gmail.com', bg: 'bg-white', border: 'border-slate-200', iconBg: 'bg-indigo-100', iconClr: 'text-indigo-600', hover: 'hover:border-indigo-300 hover:shadow-indigo-100' },
           ].map((item, i) => (
             <motion.a
               key={i}
@@ -222,7 +237,7 @@ export default function Contact() {
 
                 {/* WhatsApp CTA */}
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/919427080826"
                   target="_blank" rel="noopener noreferrer"
                   className="group flex items-center justify-center gap-3 w-full
                              bg-green-600 hover:bg-green-500 text-white

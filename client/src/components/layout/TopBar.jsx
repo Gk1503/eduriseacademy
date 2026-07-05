@@ -22,23 +22,23 @@ export default function TopBar() {
         {/* Right: contact info */}
         <div className="flex items-center gap-4 sm:gap-5">
           <a
-            href="tel:+919876543210"
+            href="tel:+919427080826"
             className="flex items-center gap-1.5 font-inter text-[12.5px]
                        text-slate-300 hover:text-white transition-colors duration-150"
           >
             <Phone size={12} strokeWidth={2} className="text-orange-400 flex-shrink-0" />
-            <span>+91 98765 43210</span>
+            <span>+91 94270 80826</span>
           </a>
 
           <span className="hidden sm:block h-3.5 w-px bg-slate-600" />
 
           <a
-            href="mailto:info@eduriseacademy.co.in"
+            href="mailto:eduriseacademy.learning@gmail.com"
             className="hidden sm:flex items-center gap-1.5 font-inter text-[12.5px]
                        text-slate-300 hover:text-white transition-colors duration-150"
           >
             <Mail size={12} strokeWidth={2} className="text-orange-400 flex-shrink-0" />
-            <span>info@eduriseacademy.co.in</span>
+            <span>eduriseacademy.learning@gmail.com</span>
           </a>
         </div>
 

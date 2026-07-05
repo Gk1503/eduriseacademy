@@ -45,7 +45,7 @@ export const generateSlug = (title) => {
 
 // Get WhatsApp link
 export const getWhatsAppLink = (message = '') => {
-  const number = import.meta.env.VITE_WHATSAPP_NUMBER || '919876543210';
+  const number = import.meta.env.VITE_WHATSAPP_NUMBER || '919427080826';
   const encodedMessage = encodeURIComponent(message || "Hi EduRise Academy! I'm interested in your courses.");
   return `https://wa.me/${number}?text=${encodedMessage}`;
 };

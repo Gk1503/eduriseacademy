@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  Trophy, BookOpen, Users, Headphones,
-  GraduationCap, Award, Star, CheckCircle,
+  Trophy, BookOpen, Headphones,
+  GraduationCap, Star, CheckCircle,
   ArrowRight, Zap,
 } from 'lucide-react';
 
@@ -15,18 +15,19 @@ import {
 
 /* ── Stats row ───────────────────────────────────────────────────── */
 const stats = [
-  { Icon: Trophy,     num: '95%',  label: 'Placement Rate',   iconColor: 'text-orange-500',  bg: 'bg-orange-50',  border: 'border-orange-100' },
   { Icon: BookOpen,   num: '25+',  label: 'Job-Ready Courses', iconColor: 'text-indigo-600',  bg: 'bg-indigo-50',  border: 'border-indigo-100' },
-  { Icon: Users,      num: '500+', label: 'Students Placed',   iconColor: 'text-emerald-600', bg: 'bg-emerald-50', border: 'border-emerald-100' },
   { Icon: Headphones, num: '24/7', label: 'Student Support',   iconColor: 'text-violet-600',  bg: 'bg-violet-50',  border: 'border-violet-100' },
 ];
 
 /* ── Mini stats inside dark card ─────────────────────────────────── */
 const miniStats = [
-  { Icon: Trophy,   num: '95%',  label: 'Placement' },
-  { Icon: BookOpen, num: '25+',  label: 'Courses'   },
-  { Icon: Users,    num: '500+', label: 'Placed'    },
+  { Icon: BookOpen,      num: '25+',    label: 'Courses'    },
+  { Icon: GraduationCap, num: 'Expert', label: 'Trainers'   },
+  { Icon: Zap,           num: 'FREE',   label: 'Demo Class' },
 ];
+
+/* ── Checklist row inside dark card ───────────────────────────────── */
+const checklist = ['Expert Mentors', 'Hands-on Projects', 'Career Support'];
 
 /* ── Floating chips outside dark card ───────────────────────────── */
 const chips = [
@@ -254,18 +255,20 @@ export default function HeroSection() {
                 </span>
               </div>
 
-              {/* Hero placement stat */}
+              {/* Hero value proposition */}
               <div className="relative text-center mb-5">
                 <p className="font-inter text-indigo-300 text-[11px] font-bold
                               uppercase tracking-[0.26em] mb-2">
-                  Overall Placement Success
+                  Why Students Choose Us
                 </p>
-                <p className="font-poppins font-black text-white leading-none
-                              text-[68px] tracking-tight">
-                  95<span className="text-emerald-400">%</span>
+                <p className="font-poppins font-black text-white leading-tight
+                              text-[22px] sm:text-[24px] tracking-tight
+                              max-w-[220px] mx-auto">
+                  Practical Training<br />
+                  <span className="text-emerald-400">Real Results</span>
                 </p>
                 <p className="font-inter text-indigo-300 text-[13px] mt-2">
-                  students placed in top companies
+                  Hands-on learning designed to make you job-ready
                 </p>
               </div>
 
@@ -288,20 +291,15 @@ export default function HeroSection() {
                 ))}
               </div>
 
-              {/* Animated progress bar */}
-              <div className="relative">
-                <div className="flex justify-between font-inter text-[11.5px] mb-2">
-                  <span className="text-indigo-300">Placement Progress</span>
-                  <span className="font-bold text-emerald-400">95% Achieved</span>
-                </div>
-                <div className="h-[6px] bg-white/10 rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: '95%' }}
-                    transition={{ duration: 1.7, delay: 1, ease: 'easeOut' }}
-                    className="h-full bg-gradient-to-r from-emerald-400 to-emerald-300 rounded-full"
-                  />
-                </div>
+              {/* Checklist row */}
+              <div className="relative flex flex-wrap items-center justify-between gap-2.5
+                              border-t border-white/10 pt-4">
+                {checklist.map((t, i) => (
+                  <div key={i} className="flex items-center gap-1.5">
+                    <CheckCircle size={14} className="text-emerald-400 flex-shrink-0" strokeWidth={2.2} />
+                    <span className="font-inter text-indigo-200 text-[11.5px] whitespace-nowrap">{t}</span>
+                  </div>
+                ))}
               </div>
             </div>
 

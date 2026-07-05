@@ -201,7 +201,7 @@ export default function SpokenEnglishSection() {
               <div className="flex items-center gap-2 mb-8">
                 <CheckCircle size={18} className="text-white flex-shrink-0" strokeWidth={2.5} />
                 <span className="font-inter text-white/90 text-[14px]">
-                  <span className="font-bold text-white">500+</span> learners already enrolled
+                  <span className="font-bold text-white">Many</span> learners already enrolled
                 </span>
               </div>
             </div>

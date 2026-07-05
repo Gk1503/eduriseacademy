@@ -2,15 +2,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   GraduationCap, Briefcase, Code2, Award, Clock, Users,
-  ArrowRight, Star, TrendingUp, Building2, CheckCircle2,
+  ArrowRight, CheckCircle2,
 } from 'lucide-react';
-
-const stats = [
-  { value: '500+', label: 'Students Trained',    Icon: Users },
-  { value: '100+', label: 'Hiring Partners',      Icon: Building2 },
-  { value: '95%',  label: 'Placement Rate',       Icon: TrendingUp },
-  { value: '4.9',  label: 'Average Rating',       Icon: Star },
-];
 
 const features = [
   {
@@ -109,34 +102,6 @@ export default function WhyChooseUs() {
             We provide the best learning environment to help you succeed —
             from school to career and beyond.
           </p>
-        </motion.div>
-
-        {/* STATS STRIP */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10"
-        >
-          {stats.map((s, i) => (
-            <div
-              key={i}
-              className="bg-gradient-to-br from-slate-900 to-indigo-950
-                         rounded-2xl px-6 py-6 flex items-center gap-4
-                         border border-white/5"
-            >
-              <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <s.Icon size={22} className="text-indigo-300" strokeWidth={1.9} />
-              </div>
-              <div>
-                <p className="font-poppins font-black text-[28px] text-white leading-none mb-0.5">
-                  {s.value}
-                </p>
-                <p className="font-inter text-slate-400 text-[13px]">{s.label}</p>
-              </div>
-            </div>
-          ))}
         </motion.div>
 
         {/* FEATURE CARDS */}

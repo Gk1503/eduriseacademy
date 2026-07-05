@@ -91,7 +91,7 @@ export default function Navbar() {
 
             {/* Phone */}
             <a
-              href="tel:+919876543210"
+              href="tel:+919427080826"
               className="group flex items-center gap-2.5
                          bg-slate-50 hover:bg-emerald-50
                          border border-slate-200 hover:border-emerald-300
@@ -108,7 +108,7 @@ export default function Navbar() {
                                  uppercase text-slate-500">Call Us</span>
                 <span className="font-poppins text-[13px] font-bold text-slate-800
                                  group-hover:text-emerald-700 transition-colors whitespace-nowrap">
-                  +91 98765 43210
+                  +91 94270 80826
                 </span>
               </div>
             </a>
@@ -198,7 +198,7 @@ export default function Navbar() {
                 className="pt-3 space-y-2.5 border-t border-slate-100 mt-2"
               >
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919427080826"
                   className="flex items-center gap-3 px-4 py-3
                              bg-emerald-500/10 hover:bg-emerald-500/20 rounded-xl
                              text-emerald-300 transition-colors
@@ -206,7 +206,7 @@ export default function Navbar() {
                 >
                   <Phone size={18} className="text-emerald-400" />
                   <span className="font-poppins text-[15px] font-semibold">
-                    +91 98765 43210
+                    +91 94270 80826
                   </span>
                 </a>
                 <Link

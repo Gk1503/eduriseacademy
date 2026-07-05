@@ -7,10 +7,10 @@ const SEOMeta = ({
   ogImage,
   canonicalUrl 
 }) => {
-  const siteTitle = 'EduRise Academy | IT Training Institute in Surat';
+  const siteTitle = 'EduRise Academy | IT Training Institute in Gandhinagar';
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-  const defaultDescription = "Surat's #1 IT Training Institute. Job-oriented courses in Web Development, Data Science, UI/UX Design, Digital Marketing and more with 100% placement support.";
-  const defaultKeywords = 'IT training Surat, web development course, MERN stack, React training, Python course, data science, UI/UX design, digital marketing, placement';
+  const defaultDescription = "Gandhinagar's #1 IT Training Institute. Job-oriented courses in Web Development, Data Science, UI/UX Design, Digital Marketing and more with 100% placement support.";
+  const defaultKeywords = 'IT training Gandhinagar, web development course, MERN stack, React training, Python course, data science, UI/UX design, digital marketing, placement';
 
   return (
     <Helmet>
