@@ -47,76 +47,60 @@ export const authAPI = {
 // Courses API
 export const coursesAPI = {
   getAll: (params) => api.get('/courses', { params }),
-  getAllAdmin: () => api.get('/courses/admin/all'),
-  getBySlug: (slug) => api.get(`/courses/${slug}`),
-  create: (data) => api.post('/courses', data, {
-    headers: { 'Content-Type': 'multipart/form-data' },
-  }),
-  update: (id, data) => api.put(`/courses/${id}`, data, {
-    headers: { 'Content-Type': 'multipart/form-data' },
-  }),
+  getAllAdmin: () => api.get('/courses', { params: { isActive: undefined } }),
+  getBySlug: (slug) => api.get(`/courses/slug/${slug}`),
+  getById: (id) => api.get(`/courses/${id}`),
+  create: (data) => api.post('/courses', data),
+  update: (id, data) => api.put(`/courses/${id}`, data),
   delete: (id) => api.delete(`/courses/${id}`),
-  toggleStatus: (id) => api.patch(`/courses/${id}/toggle`),
 };
 
 // Inquiries API
-// `create` posts to the site's own /api/inquiry serverless function (emails
-// the details straight to the academy inbox) rather than the external backend,
-// since there is no database-backed admin panel for inquiries yet.
 export const inquiriesAPI = {
-  create: async (data) => {
-    const res = await fetch('/api/inquiry', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
-    const body = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      const error = new Error(body.message || 'Failed to submit inquiry');
-      error.response = { data: body };
-      throw error;
-    }
-    return { data: body };
-  },
+  create: (data) => api.post('/inquiries', data),
   getAll: (params) => api.get('/inquiries', { params }),
   getById: (id) => api.get(`/inquiries/${id}`),
-  update: (id, data) => api.patch(`/inquiries/${id}`, data),
+  update: (id, data) => api.put(`/inquiries/${id}`, data),
   delete: (id) => api.delete(`/inquiries/${id}`),
-  export: () => api.get('/inquiries/export', { responseType: 'blob' }),
-  getStats: () => api.get('/inquiries/stats'),
+  addContact: (id, data) => api.post(`/inquiries/${id}/contact`, data),
 };
 
 // Students API
 export const studentsAPI = {
-  getShowcase: () => api.get('/students'),
-  getAll: (params) => api.get('/students/all', { params }),
-  create: (data) => api.post('/students', data, {
-    headers: { 'Content-Type': 'multipart/form-data' },
-  }),
-  update: (id, data) => api.put(`/students/${id}`, data, {
-    headers: { 'Content-Type': 'multipart/form-data' },
-  }),
+  getAll: (params) => api.get('/students', { params }),
+  getById: (id) => api.get(`/students/${id}`),
+  create: (data) => api.post('/students', data),
+  update: (id, data) => api.put(`/students/${id}`, data),
   delete: (id) => api.delete(`/students/${id}`),
-  toggleShowcase: (id) => api.patch(`/students/${id}/toggle`),
+  addPayment: (id, data) => api.post(`/students/${id}/payments`, data),
 };
 
 // Gallery API
 export const galleryAPI = {
   getAll: (params) => api.get('/gallery', { params }),
-  upload: (data) => api.post('/gallery', data, {
-    headers: { 'Content-Type': 'multipart/form-data' },
-  }),
+  getById: (id) => api.get(`/gallery/${id}`),
+  create: (data) => api.post('/gallery', data),
+  update: (id, data) => api.put(`/gallery/${id}`, data),
   delete: (id) => api.delete(`/gallery/${id}`),
 };
 
 // Announcements API
 export const announcementsAPI = {
-  getActive: () => api.get('/announcements'),
-  getAll: () => api.get('/announcements/all'),
+  getActive: () => api.get('/announcements', { params: { isActive: true } }),
+  getAll: (params) => api.get('/announcements', { params }),
+  getById: (id) => api.get(`/announcements/${id}`),
   create: (data) => api.post('/announcements', data),
   update: (id, data) => api.put(`/announcements/${id}`, data),
   delete: (id) => api.delete(`/announcements/${id}`),
-  toggleStatus: (id) => api.patch(`/announcements/${id}/toggle`),
+};
+
+// Website Content API
+export const websiteContentAPI = {
+  getAll: (params) => api.get('/website-content', { params }),
+  getByKey: (key) => api.get(`/website-content/key/${key}`),
+  create: (data) => api.post('/website-content', data),
+  update: (id, data) => api.put(`/website-content/${id}`, data),
+  delete: (id) => api.delete(`/website-content/${id}`),
 };
 
 export default api;

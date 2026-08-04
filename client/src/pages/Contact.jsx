@@ -258,9 +258,9 @@ export default function Contact() {
                   </p>
                   <div className="flex gap-3">
                     {[
-                      { Icon: FaFacebook,  href: '#', color: 'hover:bg-blue-600'  },
-                      { Icon: FaInstagram, href: '#', color: 'hover:bg-pink-600'  },
-                      { Icon: FaYoutube,   href: '#', color: 'hover:bg-red-600'   },
+                      { Icon: FaFacebook,  href: 'https://www.facebook.com/share/p/18v1f9ZBh7/', color: 'hover:bg-blue-600'  },
+                      { Icon: FaInstagram, href: 'https://www.instagram.com/edurise_academy_gnr?igsh=MTczaW1nbW5wemkwcA%3D%3D', color: 'hover:bg-pink-600'  },
+                      { Icon: FaYoutube,   href: 'https://youtube.com/@eduriseacademy-v3m?si=AMeU6_1kM1Ifwfk_', color: 'hover:bg-red-600'   },
                     ].map(({ Icon, href, color }, i) => (
                       <a key={i} href={href}
                         className={`w-9 h-9 bg-white/8 border border-white/10 rounded-xl

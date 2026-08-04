@@ -1,218 +1,290 @@
-# EduRise Academy - MERN Stack IT Training Institute Website
+# 🎓 EduRise Academy - Complete Full Stack Application
 
-A complete production-ready website for EduRise Academy, Surat's #1 IT Training Institute.
+A comprehensive education management system with React frontend and Node.js backend, connected to MongoDB Atlas.
 
-## 🚀 Tech Stack
+## 🌟 Features
 
-### Frontend
-- React 18 + Vite
-- Tailwind CSS
-- React Router DOM v6
-- Framer Motion (animations)
-- Zustand (state management)
-- React Query (server state)
-- React Hook Form + Zod (forms)
-- Swiper.js (carousels)
-- Axios (HTTP client)
+### Frontend (React + Vite)
+- 🎨 Modern UI with Tailwind CSS
+- 📱 Fully responsive design
+- 🔐 Protected admin routes
+- 💼 Complete admin dashboard
+- 🎯 Student & course management
+- 📊 Analytics and reporting
 
-### Backend
-- Node.js 20 LTS
-- Express.js
-- MongoDB + Mongoose
-- JWT Authentication
-- Cloudinary (image storage)
-- Nodemailer (email)
-- Security: helmet, cors, rate-limiting
+### Backend (Node.js + Express)
+- 🔒 JWT authentication
+- 📊 MongoDB Atlas integration
+- 🛡️ Secure password hashing
+- 📝 Complete CRUD APIs
+- ⚡ Express middleware
+- 🔐 Role-based access control
 
-## 📁 Project Structure
+## 🚀 Quick Start
+
+### Windows Users (Easiest Way)
+
+1. **Install Everything:**
+   ```bash
+   Double-click: INSTALL.bat
+   ```
+   This will:
+   - Install all dependencies
+   - Seed the database
+   - Set up admin account
+
+2. **Start Application:**
+   ```bash
+   Double-click: START.bat
+   ```
+   This will:
+   - Start backend server (Port 5000)
+   - Start frontend server (Port 5173)
+   - Open in separate terminals
+
+### Manual Setup
+
+See [SETUP.md](SETUP.md) for detailed instructions.
+
+## 🔑 Default Login
+
+After running the installation:
+
+- **URL:** http://localhost:5173/admin/login
+- **Email:** admin@edurise.com
+- **Password:** admin123
+
+## 📂 Project Structure
 
 ```
 eduriseacademy/
-├── client/          # React frontend
-└── server/          # Node.js backend
+├── client/               # React Frontend
+│   ├── src/
+│   │   ├── pages/       # Page components
+│   │   ├── components/  # Reusable components
+│   │   ├── services/    # API integration
+│   │   └── store/       # State management
+│   └── .env            # Frontend config
+│
+├── server/              # Node.js Backend
+│   ├── models/         # MongoDB schemas
+│   ├── controllers/    # Request handlers
+│   ├── routes/         # API routes
+│   ├── middleware/     # Auth & validation
+│   ├── config/         # Configuration
+│   └── .env           # Backend config
+│
+├── INSTALL.bat         # Windows installer
+├── START.bat           # Quick start script
+├── SETUP.md           # Detailed setup guide
+└── README.md          # This file
 ```
 
-## 🛠️ Setup Instructions
+## 🛠️ Tech Stack
 
-### 1. Backend Setup
+### Frontend
+- React 18
+- Vite
+- Tailwind CSS
+- React Router
+- Axios
+- Zustand (State Management)
+- React Hook Form
+- Framer Motion
 
+### Backend
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose ODM
+- JWT Authentication
+- bcryptjs
+- Helmet (Security)
+- CORS
+
+## 📡 API Endpoints
+
+### Base URL: `http://localhost:5000/api`
+
+#### Authentication
+- `POST /auth/login` - User login
+- `GET /auth/me` - Get current user
+- `POST /auth/logout` - User logout
+
+#### Courses
+- `GET /courses` - List all courses
+- `POST /courses` - Create course
+- `PUT /courses/:id` - Update course
+- `DELETE /courses/:id` - Delete course
+
+#### Students
+- `GET /students` - List students
+- `POST /students` - Add student
+- `PUT /students/:id` - Update student
+- `POST /students/:id/payments` - Add payment
+
+#### Inquiries
+- `GET /inquiries` - List inquiries
+- `POST /inquiries` - Create inquiry
+- `PUT /inquiries/:id` - Update inquiry
+
+#### Announcements
+- `GET /announcements` - List announcements
+- `POST /announcements` - Create announcement
+- `PUT /announcements/:id` - Update
+
+#### Gallery
+- `GET /gallery` - Get images
+- `POST /gallery` - Upload image
+- `DELETE /gallery/:id` - Delete image
+
+## 🗄️ Database
+
+**MongoDB Atlas Connection:**
+- Username: gopal
+- Password: Krishnan1503
+- Cluster: cluster0.wnvpzgg.mongodb.net
+- Database: eduriseacademy
+
+**Collections:**
+- users
+- courses
+- students
+- inquiries
+- announcements
+- gallery
+- websitecontents
+
+## 📱 Social Media
+
+- Instagram: [@edurise_academy_gnr](https://www.instagram.com/edurise_academy_gnr)
+- Facebook: [EduRise Academy](https://www.facebook.com/share/p/18v1f9ZBh7/)
+- YouTube: [@eduriseacademy-v3m](https://youtube.com/@eduriseacademy-v3m)
+
+## 🔧 Development
+
+### Backend Development
+```bash
+cd server
+npm run dev
+```
+
+### Frontend Development
+```bash
+cd client
+npm run dev
+```
+
+### Seed Database
+```bash
+cd server
+npm run seed
+```
+
+## 📦 Installation Commands
+
+### Install Backend
 ```bash
 cd server
 npm install
 ```
 
-Create `.env` file in server directory:
-
-```env
-PORT=5000
-NODE_ENV=development
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-JWT_EXPIRES_IN=7d
-CLIENT_URL=http://localhost:5173
-
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-
-GMAIL_USER=your_email@gmail.com
-GMAIL_APP_PASSWORD=your_app_password
-ADMIN_NOTIFICATION_EMAIL=admin@eduriseacademy.co.in
-```
-
-Seed admin account:
-```bash
-npm run seed
-```
-
-Default credentials:
-- Email: admin@eduriseacademy.co.in
-- Password: Admin@123
-
-Start server:
-```bash
-npm run dev
-```
-
-### 2. Frontend Setup
-
+### Install Frontend
 ```bash
 cd client
 npm install
 ```
 
-Create `.env` file in client directory:
+## 🎯 Admin Panel Features
 
+✅ Dashboard with analytics
+✅ Student management
+✅ Course management
+✅ Inquiry tracking
+✅ Fee management
+✅ Payment tracking
+✅ Announcements
+✅ Gallery management
+✅ Website content editor
+
+## 🔐 Security
+
+- JWT token authentication
+- Bcrypt password hashing
+- Helmet security headers
+- CORS configuration
+- Input validation
+- Protected routes
+- Role-based access
+
+## 🌐 Environment Variables
+
+### Backend (.env)
+```env
+PORT=5000
+MONGODB_URI=mongodb+srv://...
+JWT_SECRET=your_secret
+JWT_EXPIRE=30d
+CLIENT_URL=http://localhost:5173
+```
+
+### Frontend (.env)
 ```env
 VITE_API_URL=http://localhost:5000/api
-VITE_WHATSAPP_NUMBER=919876543210
-VITE_GOOGLE_MAPS_EMBED_URL=your_google_maps_embed_url
 ```
 
-Start development server:
-```bash
-npm run dev
-```
+## 📖 Documentation
 
-## 🌐 Access
+- [Setup Guide](SETUP.md) - Detailed setup instructions
+- [Server README](server/README.md) - Backend documentation
 
-- **Website**: http://localhost:5173
-- **API**: http://localhost:5000
-- **Admin Panel**: http://localhost:5173/admin/login
+## 🐛 Troubleshooting
 
-## 📋 Features
+**Backend won't start:**
+- Check MongoDB connection
+- Verify .env file exists
+- Check port 5000 availability
 
-### Public Website
-- ✅ Responsive homepage with hero section
-- ✅ Course listing and detail pages
-- ✅ About page
-- ✅ Placement showcase
-- ✅ Gallery with lightbox
-- ✅ Internship program page
-- ✅ Contact form with email notifications
-- ✅ WhatsApp integration
-- ✅ Mobile bottom navigation
-- ✅ Announcement bar
-- ✅ SEO optimized
+**Frontend won't connect:**
+- Ensure backend is running
+- Check VITE_API_URL in .env
+- Clear browser cache
 
-### Admin Panel
-- ✅ JWT authentication
-- ✅ Dashboard with statistics
-- ✅ Course management (CRUD)
-- ✅ Inquiry management
-- ✅ Student/placement management
-- ✅ Gallery management
-- ✅ Announcement management
+**Login fails:**
+- Run `npm run seed` in server folder
+- Use correct credentials
+- Check network tab for errors
 
-### Email System
-- ✅ Admin notification on new inquiry
-- ✅ Student confirmation email
-- ✅ Professional HTML templates
+## 📞 Support
 
-## 🎨 Design System
+For issues or questions:
+1. Check error messages in terminals
+2. Review browser console
+3. Verify MongoDB Atlas connectivity
+4. Check SETUP.md for solutions
 
-### Colors
-- Primary: #FF6B00 (Orange)
-- Secondary: #FFC107 (Yellow)
-- Dark: #0A0F1E
-- Accent: #10B981 (Green)
+## 🚀 Deployment
 
-### Fonts
-- Headings: Poppins
-- Body: Inter
+### Backend Deployment
+- Use Heroku, Railway, or Render
+- Set environment variables
+- Update MONGODB_URI
+- Set NODE_ENV=production
 
-## 📦 Deployment
-
-### Backend (Render.com)
-1. Push code to GitHub
-2. Create new Web Service on Render
-3. Connect repository
-4. Set environment variables
-5. Deploy
-
-### Frontend (Vercel)
-1. Push code to GitHub
-2. Import project on Vercel
-3. Set environment variables
-4. Deploy
-
-### Database (MongoDB Atlas)
-1. Create free cluster
-2. Whitelist IP: 0.0.0.0/0
-3. Get connection string
-
-## 🔒 Security Features
-
-- JWT authentication
-- Password hashing (bcrypt)
-- Rate limiting
-- CORS protection
-- XSS protection
-- MongoDB sanitization
-- Helmet security headers
-
-## 📧 Email Configuration
-
-Use Gmail App Password:
-1. Enable 2FA on Gmail
-2. Generate App Password
-3. Use in GMAIL_APP_PASSWORD
-
-## 🎯 API Endpoints
-
-### Public
-- GET /api/courses
-- GET /api/courses/:slug
-- POST /api/inquiries
-- GET /api/students
-- GET /api/gallery
-- GET /api/announcements
-
-### Admin (Protected)
-- POST /api/auth/login
-- GET /api/auth/me
-- All CRUD operations for courses, inquiries, students, gallery, announcements
-
-## 📱 Mobile Responsive
-
-- Mobile-first design
-- Touch-friendly UI
-- Bottom navigation bar
-- Optimized images
-- Fast loading
-
-## 🚀 Performance
-
-- Code splitting
-- Lazy loading
-- Image optimization (Cloudinary)
-- Caching strategies
-- Minified production build
+### Frontend Deployment
+- Use Vercel, Netlify, or Cloudflare Pages
+- Update VITE_API_URL
+- Build: `npm run build`
+- Deploy: `dist` folder
 
 ## 📄 License
 
-MIT License - EduRise Academy 2024
+ISC
 
-## 👨‍💻 Support
+## 👨‍💻 Development Team
 
-For support, email: info@eduriseacademy.co.in
+EduRise Academy Development Team
+
+---
+
+**Built with ❤️ in Gandhinagar, Gujarat**

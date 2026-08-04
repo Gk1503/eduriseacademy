@@ -22,10 +22,10 @@ const courses = [
 ];
 
 const socials = [
-  { Icon: FaFacebook,  href: 'https://facebook.com',  label: 'Facebook',  color: 'hover:bg-blue-600'  },
-  { Icon: FaInstagram, href: 'https://instagram.com', label: 'Instagram', color: 'hover:bg-pink-600'  },
+  { Icon: FaFacebook,  href: 'https://www.facebook.com/share/p/18v1f9ZBh7/',  label: 'Facebook',  color: 'hover:bg-blue-600'  },
+  { Icon: FaInstagram, href: 'https://www.instagram.com/edurise_academy_gnr?igsh=MTczaW1nbW5wemkwcA%3D%3D', label: 'Instagram', color: 'hover:bg-pink-600'  },
   { Icon: FaLinkedin,  href: 'https://linkedin.com',  label: 'LinkedIn',  color: 'hover:bg-blue-700'  },
-  { Icon: FaYoutube,   href: 'https://youtube.com',   label: 'YouTube',   color: 'hover:bg-red-600'   },
+  { Icon: FaYoutube,   href: 'https://youtube.com/@eduriseacademy-v3m?si=AMeU6_1kM1Ifwfk_',   label: 'YouTube',   color: 'hover:bg-red-600'   },
 ];
 
 export default function Footer() {
